@@ -11,6 +11,8 @@ SOCCER_COUNTRIES = {'england': ['premier-league', 'championship'],
                     'italy': ['serie-a'],
                     'spain': ['primera-division'],
                     'netherlands': ['eredivisie'],
+                    'russia': ['premier-league'],
+                    'scotland': ['premiership'],
                     }
 ENGLAND_PATH = os.path.join('soccer', 'england', 'premier-league')
 ENGLAND_PARAMS = {'f_min': 3.2, 'f_max': 3.5,
