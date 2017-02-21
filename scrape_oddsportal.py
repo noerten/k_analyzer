@@ -82,10 +82,14 @@ def get_page_matches(html):
         match['away_team'] = teams[1].strip()
         other_cells = match_cell.find_next_siblings('td')
         result_str = other_cells[0].get_text()
-        if result_str == 'award.' or result_str == 'postp.':
+        if (result_str == 'award.' or result_str == 'postp.' or
+            result_str == 'pen.'):
             print(result_str)
             continue
-        match['result'] = get_match_result(result_str)
+        try:
+            match['result'] = get_match_result(result_str)
+        except ValueError:
+            continue
         match['home_coef'] = other_cells[1].get_text()
         match['draw_coef'] = other_cells[2].get_text()
         match['away_coef'] = other_cells[3].get_text()

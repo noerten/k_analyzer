@@ -11,7 +11,7 @@ SOCCER_COUNTRIES = {'england': ['premier-league', 'championship'],
                     'italy': ['serie-a'],
                     'spain': ['primera-division'],
                     'netherlands': ['eredivisie'],
-                    'russia': ['premier-league'],
+#                    'russia': ['premier-league'],
                     'scotland': ['premiership'],
                     }
 ENGLAND_PATH = os.path.join('soccer', 'england', 'premier-league')
@@ -36,19 +36,23 @@ SPAIN_PATH = os.path.join('soccer', 'spain', 'primera-division')
 SPAIN_PARAMS = {'f_min': 3.5, 'f_max': 5.3,
                   'place': 'away', 'extremum': 'max'}
 
-RUSSIA_PATH = os.path.join('soccer', 'russia', 'premier-league')
+#RUSSIA_PATH = os.path.join('soccer', 'russia', 'premier-league')
 SCOTLAND_PATH = os.path.join('soccer', 'scotland', 'premiership')
 
 PATHS_LIST = [ENGLAND_PATH, ENGLAND2_PATH, NETHERLANDS_PATH, FRANCE_PATH,
               GERMANY_PATH, GERMANY2_PATH, ITALY_PATH, SPAIN_PATH,
-              RUSSIA_PATH, SCOTLAND_PATH]
+              SCOTLAND_PATH]
 
 def results_url(country, league, page, year='', base_url=DOMAIN,
                 sport='soccer'):
+    if country == 'scotland' and (year == 2012 or year == 2011):
+        league = 'premier-league'
+
     if not year or year == CURRENT_SEASON:
         league_year = league
     else:
         year = '-'.join(['', str(year), str(year + 1)])
         league_year = league + year
+        
     return '/'.join([base_url, sport, country, league_year, 'results/#',
                      'page', str(page)])

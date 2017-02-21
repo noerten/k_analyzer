@@ -187,10 +187,10 @@ def show_strategy(paths_params, timeline=False):
 
 if __name__ == '__main__':
     paths_params_dict = {
-#        config.ENGLAND_PATH: config.ENGLAND_PARAMS,
+        config.ENGLAND_PATH: config.ENGLAND_PARAMS,
         config.FRANCE_PATH: config.FRANCE_PARAMS,
-#        config.SPAIN_PATH: config.SPAIN_PARAMS,
-#        config.ITALY_PATH: config.ITALY_PARAMS,
+        config.SPAIN_PATH: config.SPAIN_PARAMS,
+        config.ITALY_PATH: config.ITALY_PARAMS,
     }
  #   show_strategy(paths_params_dict, timeline=True)
     for path in config.PATHS_LIST:
