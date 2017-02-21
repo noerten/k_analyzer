@@ -135,9 +135,9 @@ def show_progress(current, total, decimals=2):
 
 def find_strategies(league_path):
     desired_range = (
-#        [x / 10.0 for x in range(10, 40, 10)] +
-#        [x / 10.0 for x in range(40, 60, 2)] +
-#        [x / 10.0 for x in range(60, 100, 5)] +
+        [x / 10.0 for x in range(10, 40, 10)] +
+        [x / 10.0 for x in range(40, 60, 2)] +
+        [x / 10.0 for x in range(60, 100, 5)] +
         [x / 10.0 for x in range(100, 200, 10)]
     )
     output = []
